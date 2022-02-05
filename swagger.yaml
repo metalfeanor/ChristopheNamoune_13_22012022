@@ -32,6 +32,10 @@ paths:
             $ref: "#/definitions/TransactionResponse"
         "400":
           description: Invalid Fields
+        "401":
+          description: Invalid Token
+        "404":
+          description: Transactions not found
         "500":
           description: Internal Server Error
   /user/transactions/new:
@@ -62,6 +66,8 @@ paths:
           schema:
             $ref: "#/definitions/ApiResponse"
         "400":
+          description: Invalid Token
+        "405":
           description: Invalid Fields
         "500":
           description: Internal Server Error
@@ -92,7 +98,11 @@ paths:
           schema:
             $ref: "#/definitions/ApiResponse"
         "400":
-          description: Invalid Fields
+          description: Invalid id
+        "401":
+          description: Invalid token
+        "404":
+          description: Transaction not found
         "500":
           description: Internal Server Error
     put:
@@ -127,7 +137,9 @@ paths:
           schema:
             $ref: "#/definitions/ApiResponse"
         "400":
-          description: Invalid Fields
+          description: Invalid Fields supplied
+        "404":
+          description: Transaction not found
         "500":
           description: Internal Server Error
     delete:
@@ -156,7 +168,9 @@ paths:
           schema:
             $ref: "#/definitions/DeleteResponse"
         "400":
-          description: Invalid Fields
+          description: Invalid Id
+        "404":
+          description: Transaction not found
         "500":
           description: Internal Server Error
 securityDefinitions:
